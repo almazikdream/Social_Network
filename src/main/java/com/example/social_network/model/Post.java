@@ -9,11 +9,13 @@ public class Post {
     private String text;                // Инкапсуляция
     private List<Comment> comments = new ArrayList<>();
 
+    //Конструктор
     public Post(User author, String text) {
         this.author = author;
         this.text = text;
     }
 
+    //Геттеры
     public User getAuthor() {
         return author;
     }

@@ -8,15 +8,23 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @SpringBootApplication
 public class SocialNetworkApplication {
 
 	public static void main(String[] args) {
         SpringApplication.run(SocialNetworkApplication.class, args);
 	}
+
 	@Bean
 	CommandLineRunner run(SocialNetworkService service) {
 		return args -> {
+			Blogger blogger0 = new Blogger("Almazik", PlatformType.FACEBOOK);
+
+
+			Follower follower0 = new Follower("Ilias");
+			service.showRoles(List.of(blogger0, follower0));
 
 			Blogger blogger = service.createBlogger("Alex", PlatformType.INSTAGRAM);
 			Post post = service.createPost(blogger, "Мой первый пост");
@@ -36,5 +44,7 @@ public class SocialNetworkApplication {
 			}
 		};
 	}
+
+
 
 }

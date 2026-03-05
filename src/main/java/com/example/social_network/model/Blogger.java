@@ -28,9 +28,10 @@ public class Blogger extends User {
         return post;
     }
 
-    @Override
-    public String getRole() {
-        return "Blogger";
-    }
+   // @Override
+   // public String getRole() {
+    //    return "Blogger";
+    //}
 
 }
+//composition enharitance

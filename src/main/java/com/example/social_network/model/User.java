@@ -1,7 +1,7 @@
 package com.example.social_network.model;
 
 
-public abstract class User {
+public class User {
 
     protected String name;
 
@@ -15,6 +15,8 @@ public abstract class User {
         return name;
     }
 
-    //Метод чтобы наследники могли язать
-    public abstract String getRole();
+    //Метод чтобы наследники могли юзать
+    public String getRole() {
+        return "role";
+    }
 }

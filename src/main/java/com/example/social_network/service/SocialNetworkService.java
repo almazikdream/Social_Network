@@ -1,6 +1,7 @@
 package com.example.social_network.service;
 
 import com.example.social_network.model.*;
+import org.apache.juli.logging.Log;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -29,12 +30,14 @@ public class SocialNetworkService {
         return follower;
     }
 
+    //Функция создания поста
     public Post createPost(Blogger blogger, String text){
         Post post = blogger.createPost(text);
         posts.add(post);
         return post;
     }
 
+    //Функция создания комментария
     public void addComment(Follower follower, Post post, String text){
         follower.writeComment(post, text);
     }
@@ -43,6 +46,10 @@ public class SocialNetworkService {
         return posts;
     }
 
-
+    public void showRoles (List<User> users){
+        users.stream().forEach(user -> {
+            System.out.println(user.getRole());
+        });
+    }
 
 }

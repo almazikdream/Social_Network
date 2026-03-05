@@ -2,7 +2,7 @@ package com.example.social_network.model;
 
 public class Follower extends User {
 
-
+    //Конструктор, пишу super тем самым вызывая родительский класс для того передать ему значение
     public Follower(String name) {
         super(name);
     }
