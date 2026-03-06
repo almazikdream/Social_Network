@@ -1,22 +1,11 @@
 package com.example.social_network.model;
 
 
-public class User {
+public interface User {
 
-    protected String name;
+    String getName();
 
-    // Конструктор
-    public User(String name) {
-        this.name = name;
-    }
-
-    //Getter
-    public String getName() {
-        return name;
-    }
-
-    //Метод чтобы наследники могли юзать
-    public String getRole() {
-        return "role";
+    default String getRole() {
+        return "REGULAR_USER";
     }
 }

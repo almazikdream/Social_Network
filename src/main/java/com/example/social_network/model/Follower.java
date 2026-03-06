@@ -1,10 +1,18 @@
 package com.example.social_network.model;
 
-public class Follower extends User {
+public class Follower implements User {
 
-    //Конструктор, пишу super тем самым вызывая родительский класс для того передать ему значение
+    private String name;
+
+
     public Follower(String name) {
-        super(name);
+        this.name = name;
+    }
+
+    // Реализуем метод из интерфейса User
+    @Override
+    public String getName() {
+        return name;
     }
 
     // Поведение фоловера — написание комментария
